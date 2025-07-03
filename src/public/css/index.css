@@ -1,0 +1,122 @@
+.contact-box {
+    color: #8B7969;
+    font-family: "Inika", serif;
+    font-style: normal;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 1230px;
+}
+
+.contact-title {
+    margin-bottom: 30px;
+    font-size: 35px;
+    text-align: center;
+}
+
+.contact-form {
+    width: 972px;
+    height: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-form__item {
+    display: flex;
+    padding: 10px 0;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.contact-form__item--label-box {
+    width: 200px;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.contact-form__item--label {
+    font-size: 20px;
+}
+
+.contact-form__item--input-box {
+    flex: 1;
+    display: flex;
+    margin: 0 10px;
+    max-width: 600px;
+}
+
+.contact-form__item--input-box label {
+    margin-right: 20px;
+    font-size: 18px;
+}
+
+.contact-form__item--label-required {
+    margin-left: 5px;
+    color: #FF9494;
+    font-size: 20px;
+}
+
+.contact-form__item--input,
+.contact-form__item--textarea {
+    width: 100%;
+    max-width: 600px;
+    padding: 10px 14px;
+    margin: 0 20px;
+    color: #BEB1A6;
+    font-family: "Inika", serif;
+    font-style: normal;
+    font-size: 14px;
+    background-color: #F4F4F4;
+    border: none;
+
+}
+
+.contact-form__item--textarea {
+    height: 130px;
+}
+
+/*ラジオボタン*/
+input[type="radio"] {
+    margin-right: 5px;
+    color: #8B7969;
+}
+
+
+/*名前欄、電話番号欄整え*/
+input[name="first-name"],
+input[name="last-name"],
+input[name="tel-1"],
+input[name="tel-2"],
+input[name="tel-3"] {
+    width: calc(50% - 5px);
+    /* 名前は2分割 */
+}
+
+input[name="tel-1"],
+input[name="tel-2"],
+input[name="tel-3"] {
+    width: calc((100% - 20px) / 3);
+    /* 電話は3分割 */
+}
+
+
+.error {
+    color: #FF9494;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.contact-form__btn {
+    text-align: center;
+    margin-top: 30px;
+}
+.contact-form__btn-submit {
+    margin: 32px auto 0;
+    padding: 10px 40px;
+    width: 160px;
+    display: block;
+    background: #82756A;
+    color: #FFFFFF;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+}
