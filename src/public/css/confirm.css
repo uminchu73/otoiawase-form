@@ -1,0 +1,100 @@
+body {
+    color: #8B7969;
+    font-family: "Inika", serif;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+}
+
+/*外枠（中央寄せ・幅制限）*/
+.confirm {
+    margin: 35px auto;
+    padding: 0 15px;
+    max-width: 1230px;
+}
+
+/*タイトル*/
+.confirm-title a {
+    display: block;
+    margin-bottom: 30px;
+    font-size: 35px;
+    text-align: center;
+}
+
+/*表全体*/
+.confirm-table__inner {
+    width: 100%;
+    max-width: 970px;
+    margin: 0 auto 7px;
+    border-collapse: collapse;
+    border: 1px solid #E0DFDE;
+    background-color: #FFFFFF;
+}
+
+.confirm-table__row {
+    border-bottom: 1px solid #E0DFDE;
+}
+
+/*左側の見出し*/
+.confirm-table__header {
+    padding: 15px;
+    width: 30%;
+    text-align: left;
+    color: #FFFFFF;
+    border-bottom: 1px solid #E0DFDE;
+    background-color: #BAA899;
+}
+
+/*右側の入力値*/
+.confirm-table__text {
+    padding: 15px 45px;
+}
+
+/* 入力欄を消して、ただのテキストのように見せる */
+.confirm-table__text input {
+    color: #8B7969;
+    font-family: "Inika", serif;
+    font-style: normal;
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    font-size: 20px;
+    padding: 0;
+    outline: none;
+    pointer-events: none;
+}
+
+/*ボタンエリア*/
+.form-btn {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 30px;
+}
+
+/*送信ボタン*/
+.form-btn__submit {
+    margin: 10px;
+    padding: 10px 40px;
+    width: 120px;
+    display: block;
+    background: #82756A;
+    color: #FFFFFF;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+/*修正ボタン*/
+.revise-btn__submit {
+    margin: 10px;
+    padding: 10px 40px;
+    width: 120px;
+    display: block;
+    color: #8B7969;
+    background: none;
+    font-size: 20px;
+    border: none;
+    text-decoration: underline;
+    cursor: pointer;
+}

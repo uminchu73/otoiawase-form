@@ -19,7 +19,7 @@
             <a>Contact</a>
         </div>
         {{-- お問い合わせフォーム --}}
-        <form class="contact-form" action="/contacts/confirm" method="post">
+        <form class="contact-form" action="/confirm" method="post">
             @csrf
             {{-- 名前の入力欄 --}}
             <div class="contact-form__item">
