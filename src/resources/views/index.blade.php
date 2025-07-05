@@ -29,11 +29,16 @@
                 </div>
                 <div class="contact-form__item--input-box">
                     {{-- 入力欄 --}}
-                    <input type="text" name="first-name" class="contact-form__item--input" value="{{ old('first-name') }}" placeholder="例：山田" />
-                    <input type="text" name="last-name" class="contact-form__item--input" value="{{ old('last-name') }}" placeholder="例：太朗" />
+                    <input type="text" name="first_name" class="contact-form__item--input" value="{{ old('first_name') }}" placeholder="例：山田" />
+                    <input type="text" name="last_name" class="contact-form__item--input" value="{{ old('last_name') }}" placeholder="例：太朗" />
                     {{-- エラー表示 --}}
                     <div class="error">
-                        @error('name')
+                        @error('first_name')
+                        {{ $message }}
+                        @enderror
+                    </div>
+                    <div class="error">
+                        @error('last_name')
                         {{ $message }}
                         @enderror
                     </div>
@@ -47,9 +52,9 @@
                 </div>
                 <div class="contact-form__item--input-box">
                     {{-- ラジオボタン --}}
-                    <label><input type="radio" name="gender" value="男性" {{ old('gender', '男性') == '男性' ? 'checked' : '' }}>男性</label>
-                    <label><input type="radio" name="gender" value="女性" {{ old('gender') == '女性' ? 'checked' : '' }}>女性</label>
-                    <label><input type="radio" name="gender" value="その他" {{ old('gender') == 'その他' ? 'checked' : '' }}>その他</label>
+                    <label><input type="radio" name="gender" value="1" {{ old('gender', '1') == '1' ? 'checked' : '' }}>男性</label>
+                    <label><input type="radio" name="gender" value="2" {{ old('gender') == '2' ? 'checked' : '' }}>女性</label>
+                    <label><input type="radio" name="gender" value="3" {{ old('gender') == '3' ? 'checked' : '' }}>その他</label>
                     {{-- エラー表示 --}}
                     <div class="error">
                         @error('gender')
@@ -120,7 +125,7 @@
                 </div>
                 <div class="contact-form__item--input-box">
                     {{-- 入力欄 --}}
-                    <input type="text" name="bldg" class="contact-form__item--input" value="{{ old('bldg') }}" placeholder="例：千駄ヶ谷マンション101" />
+                    <input type="text" name="building" class="contact-form__item--input" value="{{ old('building') }}" placeholder="例：千駄ヶ谷マンション101" />
                 </div>
             </div>
             {{-- お問い合わせの種類選択欄 --}}
@@ -131,17 +136,17 @@
                 </div>
                 <div class="contact-form__item--input-box">
                     {{-- 選択欄 --}}
-                    <select name="content-select" id="" class="contact-form__item--input">
-                        <option value="" disabled {{ old('content-select') == '' ? 'selected' : '' }}>選択してください</option>
-                        <option value="商品のお届けについて" {{ old('content-select') == '商品のお届けについて' ? 'selected' : '' }}>商品のお届けについて</option>
-                        <option value="商品の交換について" {{ old('content-select') == '商品の交換について' ? 'selected' : '' }}>商品の交換について</option>
-                        <option value="商品トラブル" {{ old('content-select') == '商品トラブル' ? 'selected' : '' }}>商品トラブル</option>
-                        <option value="ショップへのお問い合わせ" {{ old('content-select') == 'ショップへのお問い合わせ' ? 'selected' : '' }}>ショップへのお問い合わせ</option>
-                        <option value="その他" {{ old('content-select') == 'その他' ? 'selected' : '' }}>その他</option>
+                    <select name="content_select" id="" class="contact-form__item--input">
+                        <option value="" disabled {{ old('content_select') == '' ? 'selected' : '' }}>選択してください</option>
+                        <option value="商品のお届けについて" {{ old('content_select') == '商品のお届けについて' ? 'selected' : '' }}>商品のお届けについて</option>
+                        <option value="商品の交換について" {{ old('content_select') == '商品の交換について' ? 'selected' : '' }}>商品の交換について</option>
+                        <option value="商品トラブル" {{ old('content_select') == '商品トラブル' ? 'selected' : '' }}>商品トラブル</option>
+                        <option value="ショップへのお問い合わせ" {{ old('content_select') == 'ショップへのお問い合わせ' ? 'selected' : '' }}>ショップへのお問い合わせ</option>
+                        <option value="その他" {{ old('content_select') == 'その他' ? 'selected' : '' }}>その他</option>
                     </select>
                     {{-- エラー表示 --}}
                     <div class="error">
-                        @error('content-select')
+                        @error('content_select')
                         {{ $message }}
                         @enderror
                     </div>
@@ -155,10 +160,10 @@
                 </div>
                 <div class="contact-form__item--input-box">
                     {{-- 入力欄 --}}
-                    <textarea name="content" class="contact-form__item--textarea" placeholder="お問い合わせ内容をご記載ください">{{ old('content') }}</textarea>
+                    <textarea name="detail" class="contact-form__item--textarea" placeholder="お問い合わせ内容をご記載ください">{{ old('detail') }}</textarea>
                     {{-- エラー表示 --}}
                     <div class="error">
-                        @error('content')
+                        @error('detail')
                         {{ $message }}
                         @enderror
                     </div>

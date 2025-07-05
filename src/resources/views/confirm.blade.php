@@ -18,7 +18,7 @@
         <div class="confirm-title">
             <a>confirm</a>
         </div>
-        <form action="/contacts" class="form" method="post">
+        <form action="/thanks" class="form" method="post">
             @csrf
             {{-- テーブル形式で確認内容を表示 --}}
             <div class="confirm-table">
@@ -29,7 +29,12 @@
                             お名前
                         </th>
                         <td class="confirm-table__text">
+                            {{-- 表示用 --}}
                             <input type="text" name="name" value="{{ $contact['name'] }}" readonly />
+                            {{-- サーバーに送る用 --}}
+                            <input type="hidden" name="first_name" value="{{ explode('　', $contact['name'])[0] ?? '' }}">
+                            <input type="hidden" name="last_name" value="{{ explode('　', $contact['name'])[1] ?? '' }}">
+
                         </td>
                     </tr>
                     {{-- 性別の行 --}}
@@ -38,7 +43,11 @@
                             性別
                         </th>
                         <td class="confirm-table__text">
-                            <input type="text" name="gender" value="{{ $contact['gender'] }}" readonly />
+                            <input type="text" name="gender" value="{{ 
+                            $contact['gender'] == 1 ? '男性' : (
+                            $contact['gender'] == 2 ? '女性' : (
+                            $contact['gender'] == 3 ? 'その他' : '')) }}" readonly />
+                            <input type="hidden" name="gender" value="{{ $contact['gender'] }}">
                         </td>
                     </tr>
                     {{-- メールアドレスの行 --}}
@@ -48,6 +57,7 @@
                         </th>
                         <td class="confirm-table__text">
                             <input type="email" name="email" value="{{ $contact['email'] }}" readonly />
+                            <input type="hidden" name="email" value="{{ $contact['email'] }}">
                         </td>
                     </tr>
                     {{-- 電話番号の行 --}}
@@ -57,6 +67,8 @@
                         </th>
                         <td class="confirm-table__text">
                             <input type="tel" name="tel" value="{{ $contact['tel'] }}" readonly />
+                            <input type="hidden" name="tel" value="{{ $contact['tel'] }}">
+                            <input type="hidden" name="tel" value="{{ $contact['tel'] }}">
                         </td>
                     </tr>
                     {{-- 住所の行 --}}
@@ -66,6 +78,7 @@
                         </th>
                         <td class="confirm-table__text">
                             <input type="text" name="address" value="{{ $contact['address'] }}" readonly />
+                            <input type="hidden" name="address" value="{{ $contact['address'] }}">
                         </td>
                     </tr>
                     {{-- 建物名の行 --}}
@@ -74,7 +87,8 @@
                             建物名
                         </th>
                         <td class="confirm-table__text">
-                            <input type="text" name="bldg" value="{{ $contact['bldg'] }}" readonly />
+                            <input type="text" name="building" value="{{ $contact['building'] }}" readonly />
+                            <input type="hidden" name="building" value="{{ $contact['building'] }}">
                         </td>
                     </tr>
                     {{-- お問い合わせの種類の行 --}}
@@ -83,7 +97,8 @@
                             お問い合わせの種類
                         </th>
                         <td class="confirm-table__text">
-                            <input type="text" name="content-select" value="{{ $contact['content-select'] }}" readonly />
+                            <input type="text" name="content_select" value="{{ $contact['content_select'] }}" readonly />
+                            <input type="hidden" name="content_select" value="{{ $contact['content_select'] }}">
                         </td>
                     </tr>
                     {{-- お問い合わせ内容の行 --}}
@@ -92,7 +107,8 @@
                             お問い合わせ内容
                         </th>
                         <td class="confirm-table__text">
-                            <input type="text" name="content" value="{{ $contact['content'] }}" readonly />
+                            <input type="text" name="detail" value="{{ $contact['detail'] }}" readonly />
+                            <input type="hidden" name="detail" value="{{ $contact['detail'] }}">
                         </td>
                     </tr>
                 </table>
@@ -101,6 +117,7 @@
             <div class="form-btn">
                 <button class="form-btn__submit" type="submit">送信</button>
                 <button formaction="/" formmethod="get" class="revise-btn__submit">修正</button>
+
             </div>
         </form>
     </div>
