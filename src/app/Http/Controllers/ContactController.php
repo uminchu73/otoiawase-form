@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\ContactRequest;
 use App\Models\Contact;
 
 class ContactController extends Controller
@@ -12,13 +13,15 @@ class ContactController extends Controller
         return view('index');
     }
 
-    public function confirm(Request $request)
+    public function confirm(ContactRequest $request)
     {
         $contact = [
+            'first_name' => $request->input('first_name'),
+            'last_name' => $request->input('last_name'),
             'name' => $request->input('first_name') . '　' . $request->input('last_name'), // 全角スペースで結合
             'gender' => $request->input('gender'),
             'email' => $request->input('email'),
-            'tel' => $request->input('tel-1') . $request->input('tel-2') . $request->input('tel-3'),
+            'tel' => $request->input('tel_1') . $request->input('tel_2') . $request->input('tel_3'),
             'address' => $request->input('address'),
             'building' => $request->input('building'),
             'content_select' => $request->input('content_select'),

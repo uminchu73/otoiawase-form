@@ -88,14 +88,24 @@
                 </div>
                 <div class="contact-form__item--input-box">
                     {{-- 入力欄 --}}
-                    <input type="tel" name="tel-1" class="contact-form__item--input" value="{{ old('tel-1') }}" placeholder="080" />
+                    <input type="tel" name="tel_1" class="contact-form__item--input" value="{{ old('tel_1') }}" placeholder="080" />
                     <span class="contact-form__item--label">-</span>
-                    <input type="tel" name="tel-2" class="contact-form__item--input" value="{{ old('tel-2') }}" placeholder="1234" />
+                    <input type="tel" name="tel_2" class="contact-form__item--input" value="{{ old('tel_2') }}" placeholder="1234" />
                     <span class="contact-form__item--label">-</span>
-                    <input type="tel" name="tel-3" class="contact-form__item--input" value="{{ old('tel-3') }}" placeholder="5678" />
+                    <input type="tel" name="tel_3" class="contact-form__item--input" value="{{ old('tel_3') }}" placeholder="5678" />
                     {{-- エラー表示 --}}
                     <div class="error">
-                        @error('tel')
+                        @error('tel_1')
+                        {{ $message }}
+                        @enderror
+                    </div>
+                    <div class="error">
+                        @error('tel_2')
+                        {{ $message }}
+                        @enderror
+                    </div>
+                    <div class="error">
+                        @error('tel_3')
                         {{ $message }}
                         @enderror
                     </div>
@@ -137,12 +147,7 @@
                 <div class="contact-form__item--input-box">
                     {{-- 選択欄 --}}
                     <select name="content_select" id="" class="contact-form__item--input">
-                        <option value="" disabled {{ old('content_select') == '' ? 'selected' : '' }}>選択してください</option>
-                        <option value="商品のお届けについて" {{ old('content_select') == '商品のお届けについて' ? 'selected' : '' }}>商品のお届けについて</option>
-                        <option value="商品の交換について" {{ old('content_select') == '商品の交換について' ? 'selected' : '' }}>商品の交換について</option>
-                        <option value="商品トラブル" {{ old('content_select') == '商品トラブル' ? 'selected' : '' }}>商品トラブル</option>
-                        <option value="ショップへのお問い合わせ" {{ old('content_select') == 'ショップへのお問い合わせ' ? 'selected' : '' }}>ショップへのお問い合わせ</option>
-                        <option value="その他" {{ old('content_select') == 'その他' ? 'selected' : '' }}>その他</option>
+                    <option value="">選択してください</option>
                     </select>
                     {{-- エラー表示 --}}
                     <div class="error">

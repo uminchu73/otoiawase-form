@@ -40,7 +40,7 @@
 .contact-form__item--input-box {
     flex: 1;
     display: flex;
-    margin: 0 10px;
+    margin: 0 8px;
     max-width: 600px;
 }
 
@@ -82,27 +82,32 @@ input[type="radio"] {
 
 
 /*名前欄、電話番号欄整え*/
-input[name="first-name"],
-input[name="last-name"],
-input[name="tel-1"],
-input[name="tel-2"],
-input[name="tel-3"] {
+input[name="first_name"],
+input[name="last_name"],
+input[name="tel_1"],
+input[name="tel_2"],
+input[name="tel_3"] {
     width: calc(50% - 5px);
     /* 名前は2分割 */
 }
 
-input[name="tel-1"],
-input[name="tel-2"],
-input[name="tel-3"] {
+input[name="tel_1"],
+input[name="tel_2"],
+input[name="tel_3"] {
     width: calc((100% - 20px) / 3);
     /* 電話は3分割 */
 }
 
 
 .error {
+    display: block;
     color: #FF9494;
     font-size: 14px;
     margin-top: 4px;
+}
+
+.error + .error {
+    margin-top: 2px;
 }
 
 .contact-form__btn {
