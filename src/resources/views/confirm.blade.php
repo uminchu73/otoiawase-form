@@ -95,8 +95,8 @@
                             お問い合わせの種類
                         </th>
                         <td class="confirm-table__text">
-                            <input type="text" value="{{ $contact['content_select'] }}" readonly />
-                            <input type="hidden" name="content_select" value="{{ $contact['content_select'] }}">
+                            <input type="text" value="{{ $contact['category_id'] }}" readonly />
+                            <input type="hidden" name="category_id" value="{{ $contact['category_id'] }}">
                         </td>
                     </tr>
                     {{-- お問い合わせ内容の行 --}}

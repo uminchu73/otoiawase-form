@@ -146,12 +146,15 @@
                 </div>
                 <div class="contact-form__item--input-box">
                     {{-- 選択欄 --}}
-                    <select name="content_select" id="" class="contact-form__item--input">
+                    <select name="category_id"  class="contact-form__item--input">
                     <option value="">選択してください</option>
+                        @foreach ($categories as $category)
+                            <option value="{{ $category['id'] }}">{{ $category['content'] }}</option>
+                        @endforeach
                     </select>
                     {{-- エラー表示 --}}
                     <div class="error">
-                        @error('content_select')
+                        @error('category_id')
                         {{ $message }}
                         @enderror
                     </div>

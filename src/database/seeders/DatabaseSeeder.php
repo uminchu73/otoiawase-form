@@ -14,5 +14,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(CategoriesTableSeeder::class);
+
+         //Contactのダミーデータ35件生成
+        \App\Models\Contact::factory()->count(35)->create();
     }
 }
