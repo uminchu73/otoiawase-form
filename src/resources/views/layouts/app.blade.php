@@ -30,6 +30,10 @@
                 <a class="header__logo" href="/">
                 FashionablyLate
                 </a>
+
+                {{-- ボタン用のセクション --}}
+                @yield('header-button')
+
             </div>
         </div>
     </header>
@@ -37,6 +41,8 @@
     <!-- ページごとの中身を表示 -->
     <main>
         @yield('content')
+
+        @yield('script')
     </main>
 </body>
 

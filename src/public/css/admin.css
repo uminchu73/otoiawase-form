@@ -1,0 +1,187 @@
+body {
+    color: #8B7969;
+    font-family: "Inika", serif;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+}
+
+/* ヘッダーボタン */
+.header__button {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    text-decoration: none;
+    border: 1px solid #D9C6B5;
+    padding: 6px 15px;
+    background-color: #F4F4F4;
+    color: #D9C6B5;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/*外枠中央寄せ・幅制限）*/
+.admin-container {
+    margin: 35px auto;
+    padding: 0 15px;
+    max-width: 950px;
+}
+
+/*タイトル*/
+.admin-title {
+    display: block;
+    margin-bottom: 30px;
+    font-size: 35px;
+    text-align: center;
+}
+
+.admin-search-form {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.admin-search-form input,
+.admin-search-form select {
+    padding: 8px;
+    border: 1px solid #E3DED9;
+    background-color: #F4F4F4;
+    color: #8B7969;
+    border-radius: 5px;
+}
+
+.admin-search-form input[name="keyword"] {
+    width: 270px;
+}
+
+.btn-search {
+    background-color: #8B7969;
+    color: #FFFFFF;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-reset {
+    background-color: #D9C6B5;
+    color: #FFFFFF;
+    padding: 8px 16px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-export {
+    background-color: #E1DBD699;
+    color: #8B7969;
+    padding: 8px 16px;
+    margin-bottom: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.admin-table {
+    width: 100%;
+    max-width: 970px;
+    margin: 0 auto 7px;
+    border-collapse: collapse;
+    border: 1px solid #E0DFDE;
+    background-color: #FFFFFF;
+}
+
+.admin-table th {
+    background-color: #8b7969;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.admin-table td {
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+
+.btn-detail {
+    background: none;
+    border: 1px solid #d9cfc4;
+    padding: 8px 20px;
+    color: #d9cfc4;
+    border-radius: 5px;
+    text-decoration: none;
+}
+/*ページネーション*/
+.pagination {
+    border: 1px solid #d9cfc4;
+    background-color: #FFFFFF;
+    color: #8B7969;
+    justify-content: right;
+    margin-top: 20px;
+}
+
+svg.w-5.h-5 {
+    /*paginateメソッドの矢印の大きさ調整のために追加*/
+    width: 30px;
+    height: 30px;
+}
+
+/*モーダル用*/
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-content {
+    background: white;
+    border: 1px solid #8B7969;
+    padding: 1.5rem;
+    width: 90%;
+    height: 70%;
+    max-width: 500px;
+    position: relative;
+}
+
+#modal-body {
+    text-align: center;
+    margin-bottom: 1.5rem;
+
+}
+
+#delete-form {
+    display: flex;
+    justify-content: center;
+}
+
+/* 削除ボタンのスタイル */
+.btn-delete {
+    background-color: #BA370D;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    text-align: center;
+    border: 1px solid #8B7969;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

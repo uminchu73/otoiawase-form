@@ -2,7 +2,7 @@
 @extends('layouts/app')
 
     @section('css')
-        {{-- index.cssの読み込み --}}
+        {{-- confirm.cssの読み込み --}}
         <link rel="stylesheet" href="{{ asset('css/confirm.css') }}" />
 
         <!-- フォントの読み込み -->
@@ -12,9 +12,8 @@
     @endsection
 
 @section('content')
-
-<div class="confirm">
-        {{-- 見出し --}}
+    {{-- 見出し --}}
+    <div class="confirm">
         <div class="confirm-title">
             <a>confirm</a>
         </div>
@@ -30,7 +29,7 @@
                         </th>
                         <td class="confirm-table__text">
                             {{-- 表示用 --}}
-                            <input type="text" value="{{ $contact['first_name'] }}　{{ $contact['last_name'] }}" readonly />
+                            <input type="text" value="{{ $contact['last_name'] }}　{{ $contact['first_name'] }}" readonly />
                             {{-- サーバーに送る用 --}}
                             <input type="hidden" name="first_name" value="{{ $contact['first_name'] }}">
                             <input type="hidden" name="last_name" value="{{ $contact['last_name'] }}">
@@ -95,7 +94,7 @@
                             お問い合わせの種類
                         </th>
                         <td class="confirm-table__text">
-                            <input type="text" value="{{ $contact['category_id'] }}" readonly />
+                            <input type="text" value="{{ $contact['category_name'] }}" readonly />
                             <input type="hidden" name="category_id" value="{{ $contact['category_id'] }}">
                         </td>
                     </tr>

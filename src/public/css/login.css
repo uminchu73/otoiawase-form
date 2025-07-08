@@ -1,0 +1,92 @@
+/* 共通ベース */
+body {
+    background-color: #F1ECE7;
+    font-family: 'Inika', serif;
+    color: #8B7969;
+}
+
+/* ヘッダーボタン */
+.header__button {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    text-decoration: none;
+    border: 1px solid #D9C6B5;
+    padding: 6px 15px;
+    background-color: #F4F4F4;
+    color: #D9C6B5;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+/* 白枠 */
+.login-form__content {
+    width: 50%;
+    margin: 0 auto 60px auto;
+    background-color: #FFFFFF;
+    padding: 60px 30px;
+    border-radius: 10px;
+    max-width: 1230px;
+}
+
+/* 見出し */
+.login-form__heading {
+    margin-top: 60px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 35px;
+}
+
+/* フォーム全体 */
+.form {
+    margin: 0 auto;
+    width: 60%;
+    text-align: center;
+}
+
+/* フォームの各グループ */
+.form__group {
+    margin-bottom: 25px;
+}
+
+.form__group-title {
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.form__error {
+    height: 20px;
+    color: #ff0000;
+    text-align: left;
+}
+
+.form__input--text input {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background-color: #F4F4F4;
+    border-radius: 2px;
+    font-size: 14px;
+    color: #BEB1A6;
+}
+
+.form__button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.form__button-submit {
+    background-color: #82756A;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 40px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.login__link {
+    margin-top: 20px;
+    text-align: center;
+}
