@@ -29,19 +29,40 @@
 
 .contact-form__item--label-box {
     width: 200px;
-    text-align: right;
     padding-right: 10px;
 }
 
 .contact-form__item--label {
     font-size: 20px;
+    text-align: right;
+}
+
+.tel-box {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.hyphen {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    padding: 0 4px;
+    vertical-align: middle;
 }
 
 .contact-form__item--input-box {
     flex: 1;
     display: flex;
     margin: 0 8px;
-    max-width: 600px;
+    max-width: 100%;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-right: 10px;
 }
 
 .contact-form__item--input-box label {
@@ -87,14 +108,14 @@ input[name="last_name"],
 input[name="tel_1"],
 input[name="tel_2"],
 input[name="tel_3"] {
-    width: calc(50% - 5px);
+    width: calc(70% - 2px);
     /* 名前は2分割 */
 }
 
 input[name="tel_1"],
 input[name="tel_2"],
 input[name="tel_3"] {
-    width: calc((100% - 20px) / 3);
+    width: calc((100% - 2px) / 3);
     /* 電話は3分割 */
 }
 
@@ -104,6 +125,7 @@ input[name="tel_3"] {
     color: #FF9494;
     font-size: 14px;
     margin-top: 4px;
+    margin-bottom: 10px;
 }
 
 .error + .error {

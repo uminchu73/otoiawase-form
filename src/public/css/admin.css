@@ -84,11 +84,17 @@ body {
 
 .admin-table {
     width: 100%;
-    max-width: 970px;
     margin: 0 auto 7px;
     border-collapse: collapse;
     border: 1px solid #E0DFDE;
     background-color: #FFFFFF;
+    table-layout: fixed;
+}
+
+.admin-table__inner {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
 }
 
 .admin-table th {
@@ -96,11 +102,13 @@ body {
     color: white;
     padding: 10px;
     text-align: center;
+    width: auto;
 }
 
 .admin-table td {
     border-bottom: 1px solid #ddd;
     padding: 10px;
+    text-align: center;
 }
 
 .btn-detail {

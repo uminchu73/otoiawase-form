@@ -47,8 +47,13 @@
             <a href="/admin" class="btn-reset">リセット</a>
         </form>
 
-        <form method="POST" action="">
+        {{-- エクスポートボタン --}}
+        <form method="POST" action="{{ route('admin.export') }}">
             @csrf
+            <input type="hidden" name="keyword" value="{{ request('keyword') }}">
+            <input type="hidden" name="gender" value="{{ request('gender') }}">
+            <input type="hidden" name="category" value="{{ request('category') }}">
+            <input type="hidden" name="date" value="{{ request('date') }}">
             <button type="submit" class="btn-export">エクスポート</button>
         </form>
         {{-- ページネーション --}}
@@ -56,39 +61,42 @@
 
         <div class="admin-table">
             <table class="admin-table__inner">
-                {{-- テーブルのヘッダー（横並び） --}}
-                <tr class="admin-table__header-row">
-                    <th>お名前</th>
-                    <th>性別</th>
-                    <th>メールアドレス</th>
-                    <th>お問い合わせの種類</th>
-                    <th></th>
-                </tr>
+                {{-- テーブルのヘッダー --}}
+                <thead>
+                    <tr class="admin-table__header-row">
+                        <th>お名前</th>
+                        <th>性別</th>
+                        <th>メールアドレス</th>
+                        <th>お問い合わせの種類</th>
+                        <th></th>
+                    </tr>
+                </thead>
 
                 {{-- テーブルのデータ --}}
-                @foreach ($contacts as $contact)
-                    <tr class="admin-table__data-row">
-                        <td>
-                            {{ $contact->last_name }}　{{ $contact->first_name }}
-                        </td>
-                        <td>
-                            @if ($contact->gender == 1)
-                                男性
-                            @elseif ($contact->gender == 2)
-                                女性
-                            @else
-                                その他
-                            @endif
-                        </td>
-                        <td>{{ $contact->email }}</td>
-                        <td>{{ $contact->category->content ?? '未設定' }}
-                        </td>
-
-                        <td>
-                        <a href="#" class="btn-detail" data-id="{{ $contact->id }}">詳細</a>
-                        </td>
-                    </tr>
-                @endforeach
+                <tbody>
+                    @foreach ($contacts as $contact)
+                        <tr class="admin-table__data-row">
+                            <td>
+                                {{ $contact->last_name }}　{{ $contact->first_name }}
+                            </td>
+                            <td>
+                                @if ($contact->gender == 1)
+                                    男性
+                                @elseif ($contact->gender == 2)
+                                    女性
+                                @else
+                                    その他
+                                @endif
+                            </td>
+                            <td>{{ $contact->email }}</td>
+                            <td>{{ $contact->category->content ?? '未設定' }}
+                            </td>
+                            <td>
+                                <a href="#" class="btn-detail" data-id="{{ $contact->id }}">詳細</a>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
             </table>
         </div>
     </div>
@@ -116,6 +124,7 @@
     </div>
 
 
+    {{-- モーダルウィンドウ --}}
     @section('script')
         <script>
             document.addEventListener('DOMContentLoaded', () => {

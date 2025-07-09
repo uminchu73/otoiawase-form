@@ -29,18 +29,23 @@
                 </div>
                 <div class="contact-form__item--input-box">
                     {{-- 入力欄 --}}
-                    <input type="text" name="first_name" class="contact-form__item--input" value="{{ old('first_name') }}" placeholder="例：山田" />
-                    <input type="text" name="last_name" class="contact-form__item--input" value="{{ old('last_name') }}" placeholder="例：太朗" />
-                    {{-- エラー表示 --}}
-                    <div class="error">
-                        @error('first_name')
-                        {{ $message }}
-                        @enderror
+                    <div class="input-group">
+                        <input type="text" name="first_name" class="contact-form__item--input" value="{{ old('first_name') }}" placeholder="例：山田" />
+                        {{-- エラー表示 --}}
+                        <div class="error">
+                            @error('first_name')
+                                {{ $message }}
+                            @enderror
+                        </div>
                     </div>
-                    <div class="error">
-                        @error('last_name')
-                        {{ $message }}
-                        @enderror
+                    <div class="input-group">
+                        <input type="text" name="last_name" class="contact-form__item--input" value="{{ old('last_name') }}" placeholder="例：太朗" />
+                        {{-- エラー表示 --}}
+                        <div class="error">
+                            @error('last_name')
+                                {{ $message }}
+                            @enderror
+                        </div>
                     </div>
                 </div>
             </div>
@@ -71,12 +76,14 @@
                 </div>
                 <div class="contact-form__item--input-box">
                     {{-- 入力欄 --}}
-                    <input type="email" name="email" class="contact-form__item--input" value="{{ old('email') }}" placeholder="例：test@example.com" />
-                    {{-- エラー表示 --}}
-                    <div class="error">
-                        @error('email')
-                        {{ $message }}
-                        @enderror
+                    <div class="input-group">
+                        <input type="email" name="email" class="contact-form__item--input" value="{{ old('email') }}" placeholder="例：test@example.com" />
+                        {{-- エラー表示 --}}
+                        <div class="error">
+                            @error('email')
+                                {{ $message }}
+                            @enderror
+                        </div>
                     </div>
                 </div>
             </div>
@@ -86,28 +93,34 @@
                     <span class="contact-form__item--label">電話番号</span>
                     <span class="contact-form__item--label-required">※</span>
                 </div>
-                <div class="contact-form__item--input-box">
+                <div class="contact-form__item--input-box tel-box">
                     {{-- 入力欄 --}}
-                    <input type="tel" name="tel_1" class="contact-form__item--input" value="{{ old('tel_1') }}" placeholder="080" />
-                    <span class="contact-form__item--label">-</span>
-                    <input type="tel" name="tel_2" class="contact-form__item--input" value="{{ old('tel_2') }}" placeholder="1234" />
-                    <span class="contact-form__item--label">-</span>
-                    <input type="tel" name="tel_3" class="contact-form__item--input" value="{{ old('tel_3') }}" placeholder="5678" />
-                    {{-- エラー表示 --}}
-                    <div class="error">
-                        @error('tel_1')
-                        {{ $message }}
-                        @enderror
+                    <div class="input-group">
+                        <input type="tel" name="tel_1" class="contact-form__item--input" value="{{ old('tel_1') }}" placeholder="080" />
+                        {{-- エラー表示 --}}
+                        <div class="error">
+                            @error('tel_1')
+                                {{ $message }}
+                            @enderror
+                        </div>
                     </div>
-                    <div class="error">
-                        @error('tel_2')
-                        {{ $message }}
-                        @enderror
+                    <span class="hyphen">-</span>
+                    <div class="input-group">
+                        <input type="tel" name="tel_2" class="contact-form__item--input" value="{{ old('tel_2') }}" placeholder="1234" />
+                        <div class="error">
+                            @error('tel_2')
+                                {{ $message }}
+                            @enderror
+                        </div>
                     </div>
-                    <div class="error">
-                        @error('tel_3')
-                        {{ $message }}
-                        @enderror
+                    <span class="hyphen">-</span>
+                    <div class="input-group">
+                        <input type="tel" name="tel_3" class="contact-form__item--input" value="{{ old('tel_3') }}" placeholder="5678" />
+                        <div class="error">
+                            @error('tel_3')
+                                {{ $message }}
+                            @enderror
+                        </div>
                     </div>
                 </div>
             </div>
@@ -119,12 +132,14 @@
                 </div>
                 <div class="contact-form__item--input-box">
                     {{-- 入力欄 --}}
-                    <input type="text" name="address" class="contact-form__item--input" value="{{ old('address') }}" placeholder="例：東京都渋谷区千駄ヶ谷1-2-3" />
-                    {{-- エラー表示 --}}
-                    <div class="error">
-                        @error('address')
-                        {{ $message }}
-                        @enderror
+                    <div class="input-group">
+                        <input type="text" name="address" class="contact-form__item--input" value="{{ old('address') }}" placeholder="例：東京都渋谷区千駄ヶ谷1-2-3" />
+                        {{-- エラー表示 --}}
+                        <div class="error">
+                            @error('address')
+                                {{ $message }}
+                            @enderror
+                        </div>
                     </div>
                 </div>
             </div>
@@ -146,18 +161,19 @@
                 </div>
                 <div class="contact-form__item--input-box">
                     {{-- 選択欄 --}}
-                    <select name="category_id"  class="contact-form__item--input">
-                    <option value="">選択してください</option>
-                        @foreach ($categories as $category)
-                        <option value="{{ $category['id'] }}" {{ old('category_id') == $category['id'] ? 'selected' : '' }}>
-                        {{ $category['content'] }}</option>
-                        @endforeach
-                    </select>
-                    {{-- エラー表示 --}}
-                    <div class="error">
-                        @error('category_id')
-                        {{ $message }}
-                        @enderror
+                    <div class="input-group">
+                        <select name="category_id"  class="contact-form__item--input">
+                            <option value="">選択してください</option>
+                            @foreach ($categories as $category)
+                                <option value="{{ $category['id'] }}" {{ old('category_id') == $category['id'] ? 'selected' : '' }}>{{ $category['content'] }}</option>
+                            @endforeach
+                        </select>
+                        {{-- エラー表示 --}}
+                        <div class="error">
+                            @error('category_id')
+                                {{ $message }}
+                            @enderror
+                        </div>
                     </div>
                 </div>
             </div>
@@ -169,12 +185,14 @@
                 </div>
                 <div class="contact-form__item--input-box">
                     {{-- 入力欄 --}}
-                    <textarea name="detail" class="contact-form__item--textarea" placeholder="お問い合わせ内容をご記載ください">{{ old('detail') }}</textarea>
-                    {{-- エラー表示 --}}
-                    <div class="error">
-                        @error('detail')
-                        {{ $message }}
-                        @enderror
+                    <div class="input-group">
+                        <textarea name="detail" class="contact-form__item--textarea" placeholder="お問い合わせ内容をご記載ください">{{ old('detail') }}</textarea>
+                        {{-- エラー表示 --}}
+                        <div class="error">
+                            @error('detail')
+                            {{ $message }}
+                            @enderror
+                        </div>
                     </div>
                 </div>
             </div>

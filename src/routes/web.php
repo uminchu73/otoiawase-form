@@ -21,9 +21,12 @@ Route::post('/thanks', [ContactController::class, 'store']);
 
 
 Route::middleware('auth')->group(function () {
-    Route::get('/admin', [AdminController::class, 'index']);
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 });
 
 Route::get('/admin/contacts/{contact}', [ContactController::class, 'show'])->name('contacts.show');
 Route::delete('/admin/contacts/{contact}', [ContactController::class, 'destroy'])->name('contacts.destroy');
 
+// routes/web.php
+
+Route::post('/admin/export', [AdminController::class, 'export'])->name('admin.export');
