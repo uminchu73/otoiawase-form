@@ -12,9 +12,9 @@
     @endsection
 
 @section('content')
-
-{{-- 見出し --}}
+    {{-- お問い合わせフォーム全体を囲むボックス --}}
     <div class="contact-box">
+        {{-- 見出し部分 "Contact" --}}
         <div class="contact-title">
             <a>Contact</a>
         </div>
@@ -28,21 +28,22 @@
                     <span class="contact-form__item--label-required">※</span>
                 </div>
                 <div class="contact-form__item--input-box">
-                    {{-- 入力欄 --}}
+                    {{-- 入力欄（姓） --}}
                     <div class="input-group">
-                        <input type="text" name="first_name" class="contact-form__item--input" value="{{ old('first_name') }}" placeholder="例：山田" />
+                        <input type="text" name="last_name" class="contact-form__item--input" value="{{ old('last_name') }}" placeholder="例：山田" />
                         {{-- エラー表示 --}}
                         <div class="error">
-                            @error('first_name')
+                            @error('last_name')
                                 {{ $message }}
                             @enderror
                         </div>
                     </div>
+                    {{-- 入力欄（名） --}}
                     <div class="input-group">
-                        <input type="text" name="last_name" class="contact-form__item--input" value="{{ old('last_name') }}" placeholder="例：太朗" />
+                        <input type="text" name="first_name" class="contact-form__item--input" value="{{ old('first_name') }}" placeholder="例：太朗" />
                         {{-- エラー表示 --}}
                         <div class="error">
-                            @error('last_name')
+                            @error('first_name')
                                 {{ $message }}
                             @enderror
                         </div>
