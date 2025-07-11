@@ -67,7 +67,7 @@ Webサーバー：Nginx v1.21.1
 
 ## ER図
 
-![お問い合わせフォームER図](src/assets/otoiawase-form.svg)
+![お問い合わせフォームER図](src/assets/images/otoiawaseform-new.svg)
 
 
 ## URL
