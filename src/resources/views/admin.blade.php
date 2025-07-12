@@ -13,11 +13,12 @@
 
 @section('content')
     <div class="admin-container">
+        {{-- タイトル表示 --}}
         <a class="admin-title">Admin</a>
-
+        {{-- お問い合わせ一覧を検索するフォーム --}}
         <form class="admin-search-form" method="GET" action="/admin">
+            {{-- キーワード入力欄 --}}
             <input type="text" name="keyword" value="{{ request('keyword') }}" placeholder="名前やメールアドレスを入力してください">
-
             {{-- 性別選択 --}}
             <select name="gender">
                 <option value="" disabled {{ request('gender') === null ? 'selected' : '' }}>性別</option>
@@ -100,12 +101,12 @@
             </table>
         </div>
     </div>
-
+    {{-- モーダルウィンドウ --}}
     <div id="modal" class="modal" style="display:none;">
         <div class="modal-content">
             <span id="modal-close" class="modal-close">&times;</span>
             <div id="modal-body">
-            <!-- ここに詳細情報をセット -->
+                {{-- 各項目の詳細表示エリア（JSで値をセット） --}}
                 <p><strong>お名前：</strong><span id="modal-name"></span></p>
                 <p><strong>性別：</strong><span id="modal-gender"></span></p>
                 <p><strong>メールアドレス：</strong><span id="modal-email"></span></p>
@@ -115,6 +116,7 @@
                 <p><strong>お問い合わせの種類：</strong><span id="modal-category"></span></p>
                 <p><strong>お問い合わせ内容：</strong><span id="modal-detail"></span></p>
             </div>
+            {{-- 削除用フォーム（詳細を表示中のデータを削除） --}}
             <form id="delete-form" method="POST" style="margin-top:1rem;">
                 @csrf
                 @method('DELETE')
@@ -124,7 +126,7 @@
     </div>
 
 
-    {{-- モーダルウィンドウ --}}
+    {{-- モーダル制御スクリプト --}}
     @section('script')
         <script>
             document.addEventListener('DOMContentLoaded', () => {
@@ -154,7 +156,7 @@
 
                                 // 削除フォームのアクションセット
                                 deleteForm.action = `/admin/contacts/${contactId}`;
-
+                                // モーダル表示
                                 modal.style.display = 'flex';
                             })
                             .catch(err => {
